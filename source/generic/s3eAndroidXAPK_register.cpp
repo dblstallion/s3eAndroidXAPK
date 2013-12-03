@@ -21,15 +21,13 @@ extern void s3eAndroidXAPKTerminate();
 void s3eAndroidXAPKRegisterExt()
 {
     /* fill in the function pointer struct for this extension */
-    void* funcPtrs[3];
-    funcPtrs[0] = (void*)s3eAndroidXAPKRegister;
-    funcPtrs[1] = (void*)s3eAndroidXAPKUnRegister;
-    funcPtrs[2] = (void*)s3eAndroidXAPKGetFiles;
+    void* funcPtrs[1];
+    funcPtrs[0] = (void*)s3eAndroidXAPKGetFiles;
 
     /*
      * Flags that specify the extension's use of locking and stackswitching
      */
-    int flags[3] = { 0 };
+    int flags[1] = { 0 };
 
     /*
      * Register the extension

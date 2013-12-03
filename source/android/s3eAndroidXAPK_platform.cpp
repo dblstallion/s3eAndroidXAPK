@@ -13,6 +13,18 @@
 #include <jni.h>
 #include "IwDebug.h"
 
+typedef enum s3eAndroidXAPKCallback
+{
+    /**
+     * Called after s3eAndroidXAPKGetFiles is called to return the response.
+     * systemData is a pointer to an s3eAndroidXAPKResponse instance
+     */
+	s3eAndroidXAPKCallback_ResponseReceived,
+
+	// Marker for the last callback
+	s3eAndroidXAPKCallback_MAX
+} s3eAndroidXAPKCallback;
+
 static jobject g_Obj;
 static jmethodID g_s3eAndroidXAPKGetFiles;
 
@@ -115,17 +127,7 @@ void s3eAndroidXAPKTerminate_platform()
     // Add any platform-specific termination code here
 }
 
-s3eResult s3eAndroidXAPKRegister_platform(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn, void* userData)
-{
-    return s3eEdkCallbacksRegister(S3E_EXT_ANDROIDXAPK_HASH, s3eAndroidXAPKCallback_MAX, callbackID, callbackFn, userData, false);
-}
-
-s3eResult s3eAndroidXAPKUnRegister_platform(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn)
-{
-    return s3eEdkCallbacksUnRegister(S3E_EXT_ANDROIDXAPK_HASH, s3eAndroidXAPKCallback_MAX, callbackID, callbackFn);
-}
-
-s3eResult s3eAndroidXAPKGetFiles_platform(const char* base64PublicKey, const void* salt, int32 saltLength)
+s3eResult s3eAndroidXAPKGetFiles_platform(const char* base64PublicKey, const void* salt, int32 saltLength, s3eCallback callbackFn, void* userData)
 {
     if (saltLength != 20)
     {
@@ -133,6 +135,9 @@ s3eResult s3eAndroidXAPKGetFiles_platform(const char* base64PublicKey, const voi
         s3eEdkErrorSetString("Salt must be 20 bytes long");
         return S3E_RESULT_ERROR;
     }
+
+    if(s3eEdkCallbacksRegister(S3E_EXT_ANDROIDXAPK_HASH, s3eAndroidXAPKCallback_MAX, s3eAndroidXAPKCallback_ResponseReceived, callbackFn, userData, false) != S3E_RESULT_SUCCESS)
+        return S3E_RESULT_ERROR;
 
     JNIEnv* env = s3eEdkJNIGetEnv();
     jstring base64PublicKey_jstr = env->NewStringUTF(base64PublicKey);
@@ -147,5 +152,9 @@ s3eResult s3eAndroidXAPKGetFiles_platform(const char* base64PublicKey, const voi
 
 void responseReceived(JNIEnv* env, jobject obj, jobject response)
 {
-    // Do stuff here
+    IwTrace(s3eAndroidXAPK, ("Response received"));
+    if (s3eEdkCallbacksIsRegistered(S3E_EXT_ANDROIDXAPK_HASH, s3eAndroidXAPKCallback_ResponseReceived))
+    {
+        s3eEdkCallbacksEnqueue(S3E_EXT_ANDROIDXAPK_HASH, s3eAndroidXAPKCallback_ResponseReceived, NULL, 0, NULL, true);
+    }
 }

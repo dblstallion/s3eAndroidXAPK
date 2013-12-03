@@ -23,17 +23,7 @@ void s3eAndroidXAPKTerminate()
     s3eAndroidXAPKTerminate_platform();
 }
 
-s3eResult s3eAndroidXAPKRegister(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn, void* userData)
+s3eResult s3eAndroidXAPKGetFiles(const char* base64PublicKey, const void* salt, int32 saltLength, s3eCallback callbackFn, void* userData)
 {
-	return s3eAndroidXAPKRegister_platform(callbackID, callbackFn, userData);
-}
-
-s3eResult s3eAndroidXAPKUnRegister(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn)
-{
-	return s3eAndroidXAPKUnRegister_platform(callbackID, callbackFn);
-}
-
-s3eResult s3eAndroidXAPKGetFiles(const char* base64PublicKey, const void* salt, int32 saltLength)
-{
-	return s3eAndroidXAPKGetFiles_platform(base64PublicKey, salt, saltLength);
+	return s3eAndroidXAPKGetFiles_platform(base64PublicKey, salt, saltLength, callbackFn, userData);
 }

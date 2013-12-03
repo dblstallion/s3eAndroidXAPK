@@ -18,18 +18,6 @@
 
 #include "s3eTypes.h"
 
-typedef enum s3eAndroidXAPKCallback
-{
-    /**
-     * Called after s3eAndroidXAPKGetFiles is called to return the response.
-     * systemData is a pointer to an s3eAndroidXAPKResponse instance
-     */
-	s3eAndroidXAPKCallback_ResponseReceived,
-
-	// Marker for the last callback
-	s3eAndroidXAPKCallback_MAX
-} s3eAndroidXAPKCallback;
-
 typedef enum s3eAndroidXAPKResult
 {
     s3eAndroidXAPKResult_Success,       // Licensed and everything worked
@@ -65,11 +53,11 @@ S3E_BEGIN_C_DECL
  */
 s3eBool s3eAndroidXAPKAvailable();
 
-s3eResult s3eAndroidXAPKRegister(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn, void* userData);
-
-s3eResult s3eAndroidXAPKUnRegister(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn);
-
-s3eResult s3eAndroidXAPKGetFiles(const char* base64PublicKey, const void* salt, int32 saltLength);
+/**
+ * Callback will be called when response is received
+ * systemData is a pointer to an s3eAndroidXAPKResponse instance
+ */
+s3eResult s3eAndroidXAPKGetFiles(const char* base64PublicKey, const void* salt, int32 saltLength, s3eCallback callbackFn, void* userData);
 
 S3E_END_C_DECL
 
