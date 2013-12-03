@@ -42,7 +42,11 @@ void s3eAndroidXAPKTerminate();
  * Platform-specific termination, implemented on each platform
  */
 void s3eAndroidXAPKTerminate_platform();
-void s3eAndroidXAPKGetFiles_platform(const char* base64PublicKey, const void* salt, int32 saltLength);
+s3eResult s3eAndroidXAPKRegister_platform(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn, void* userData);
+
+s3eResult s3eAndroidXAPKUnRegister_platform(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn);
+
+s3eResult s3eAndroidXAPKGetFiles_platform(const char* base64PublicKey, const void* salt, int32 saltLength);
 
 
 #endif /* !S3EANDROIDXAPK_INTERNAL_H */

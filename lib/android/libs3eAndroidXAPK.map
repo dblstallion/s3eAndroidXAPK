@@ -1,0 +1,156 @@
+Archive member included because of file (symbol)
+
+C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                              release\s3eAndroidXAPK_platform.os (s3eEdkThreadRunOnOS)
+
+Discarded input sections
+
+ .text          0x00000000       0x14 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .bss           0x00000000        0x0 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .note.GNU-stack
+                0x00000000        0x0 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .group         0x00000000        0x8 release\s3eAndroidXAPK_platform.os
+ .group         0x00000000        0x8 release\s3eAndroidXAPK_platform.os
+ .text          0x00000000        0x0 release\s3eAndroidXAPK_platform.os
+ .data          0x00000000        0x0 release\s3eAndroidXAPK_platform.os
+ .note.GNU-stack
+                0x00000000        0x0 release\s3eAndroidXAPK_platform.os
+ .text          0x00000000        0x0 release\s3eAndroidXAPK.os
+ .data          0x00000000        0x0 release\s3eAndroidXAPK.os
+ .bss           0x00000000        0x0 release\s3eAndroidXAPK.os
+ .note.GNU-stack
+                0x00000000        0x0 release\s3eAndroidXAPK.os
+ .text          0x00000000        0x0 release\s3eAndroidXAPK_register.os
+ .data          0x00000000        0x0 release\s3eAndroidXAPK_register.os
+ .bss           0x00000000        0x0 release\s3eAndroidXAPK_register.os
+ .text._Z25s3eAndroidXAPKRegisterExtv
+                0x00000000       0x98 release\s3eAndroidXAPK_register.os
+ .note.GNU-stack
+                0x00000000        0x0 release\s3eAndroidXAPK_register.os
+ .text          0x00000000        0x0 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .data          0x00000000        0x0 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .bss           0x00000000        0x0 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .text.s3eEdkThreadRunOnOSAsync
+                0x00000000       0x30 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .note.GNU-stack
+                0x00000000        0x0 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .text          0x00000000        0x0 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .data          0x00000000        0x0 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .bss           0x00000000        0x0 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .note.GNU-stack
+                0x00000000        0x0 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+
+Memory map
+
+ ** file header
+                0x00000000       0x34
+ ** segment headers
+                0x00000034       0xe0
+
+.interp         0x00000114       0x13
+ ** fill        0x00000114       0x13
+
+.dynsym         0x00000128       0xd0
+ ** dynsym      0x00000128       0xd0
+
+.dynstr         0x000001f8       0xf9
+ ** string table
+                0x000001f8       0xf9
+
+.hash           0x000002f4       0x48
+ ** hash        0x000002f4       0x48
+
+.rel.dyn        0x0000033c       0x48
+ ** dynamic relocs
+                0x0000033c       0x48
+
+.rel.plt        0x00000384       0x30
+ ** dynamic relocs
+                0x00000384       0x30
+
+.plt            0x000003b4       0x5c
+ ** PLT         0x000003b4       0x5c
+
+.text           0x00000410      0x50c
+ .text.exit     0x00000410       0x10 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x00000410                __on_dlclose
+ .text._Z16responseReceivedP7_JNIEnvP8_jobjectS2_
+                0x00000420        0x4 release\s3eAndroidXAPK_platform.os
+                0x00000420                responseReceived(_JNIEnv*, _jobject*, _jobject*)
+ .text._ZL27s3eEdkAndroidFindClass_realPKc
+                0x00000424       0xb4 release\s3eAndroidXAPK_platform.os
+ .text._ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz
+                0x000004d8       0x38 release\s3eAndroidXAPK_platform.os
+                0x000004d8                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv14CallVoidMethodEP8_jobjectP10_jmethodIDz
+                0x00000510       0x38 release\s3eAndroidXAPK_platform.os
+                0x00000510                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
+ .text._Z27s3eAndroidXAPKInit_platformv
+                0x00000548      0x1a0 release\s3eAndroidXAPK_platform.os
+                0x00000548                s3eAndroidXAPKInit_platform()
+ .text._Z32s3eAndroidXAPKTerminate_platformv
+                0x000006e8        0x4 release\s3eAndroidXAPK_platform.os
+                0x000006e8                s3eAndroidXAPKTerminate_platform()
+ .text._Z31s3eAndroidXAPKRegister_platform22s3eAndroidXAPKCallbackPFiPvS0_ES0_
+                0x000006ec        0x8 release\s3eAndroidXAPK_platform.os
+                0x000006ec                s3eAndroidXAPKRegister_platform(s3eAndroidXAPKCallback, int (*)(void*, void*), void*)
+ .text._Z33s3eAndroidXAPKUnRegister_platform22s3eAndroidXAPKCallbackPFiPvS0_E
+                0x000006f4        0x8 release\s3eAndroidXAPK_platform.os
+                0x000006f4                s3eAndroidXAPKUnRegister_platform(s3eAndroidXAPKCallback, int (*)(void*, void*))
+ .text._Z31s3eAndroidXAPKGetFiles_platformPKcPKvi
+                0x000006fc      0x114 release\s3eAndroidXAPK_platform.os
+                0x000006fc                s3eAndroidXAPKGetFiles_platform(char const*, void const*, int)
+ .text._Z18s3eAndroidXAPKInitv
+                0x00000810        0x4 release\s3eAndroidXAPK.os
+                0x00000810                s3eAndroidXAPKInit()
+ .text._Z23s3eAndroidXAPKTerminatev
+                0x00000814        0x4 release\s3eAndroidXAPK.os
+                0x00000814                s3eAndroidXAPKTerminate()
+ .text.s3eAndroidXAPKRegister
+                0x00000818        0x4 release\s3eAndroidXAPK.os
+                0x00000818                s3eAndroidXAPKRegister
+ .text.s3eAndroidXAPKUnRegister
+                0x0000081c        0x4 release\s3eAndroidXAPK.os
+                0x0000081c                s3eAndroidXAPKUnRegister
+ .text.s3eAndroidXAPKGetFiles
+                0x00000820        0x4 release\s3eAndroidXAPK.os
+                0x00000820                s3eAndroidXAPKGetFiles
+ .text.RegisterExt
+                0x00000824       0x98 release\s3eAndroidXAPK_register.os
+                0x00000824                RegisterExt
+ .text.s3eEdkThreadRunOnOS
+                0x000008bc       0x30 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                0x000008bc                s3eEdkThreadRunOnOS
+ .text.s3eEdkErrorSetString
+                0xffffffffffffffff       0x30 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                0x000008ec                s3eEdkErrorSetString
+
+.rodata         0x0000091c       0xb0
+ .rodata.str1.4
+                0x0000091c       0xa0 release\s3eAndroidXAPK_platform.os
+ .rodata.str1.4
+                0x000009bc       0x10 release\s3eAndroidXAPK_register.os
+
+.fini_array     0x00001ed0        0x8
+ .fini_array    0x00001ed0        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00001ed4        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+
+.data.rel.ro    0x00001ed8        0xc
+ .data.rel.ro   0x00001ed8        0xc release\s3eAndroidXAPK_platform.os
+
+.init_array     0x00001ee4        0x4
+ .init_array    0x00001ee4        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+
+.dynamic        0x00001ee8       0xe0
+ ** dynamic     0x00001ee8       0xe0
+
+.got            0x00001fc8       0x38
+ ** GOT         0x00001fc8       0x14
+ ** GOT PLT     0x00001fdc       0x24
+
+.data           0x00002000        0x4
+ .data          0x00002000        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x00002000                __dso_handle
+
+.bss            0x00002004        0x8
+ .bss           0x00002004        0x8 release\s3eAndroidXAPK_platform.os

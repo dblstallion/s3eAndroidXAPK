@@ -16,6 +16,8 @@
 static jobject g_Obj;
 static jmethodID g_s3eAndroidXAPKGetFiles;
 
+void responseReceived(JNIEnv* env, jobject obj, jobject response);
+
 s3eResult s3eAndroidXAPKInit_platform()
 {
     // Get the environment from the pointer
@@ -28,6 +30,12 @@ s3eResult s3eAndroidXAPKInit_platform()
     if (!cls)
         goto fail;
 
+    //Register the native method on the object
+    static const JNINativeMethod jnm = { "responseReceived", "(Ls3eAndroidXAPK$Response;)V", (void*)&responseReceived };
+
+    if (env->RegisterNatives(cls, &jnm, 1))
+        goto fail;
+
     // Get its constructor
     cons = env->GetMethodID(cls, "<init>", "()V");
     if (!cons)
@@ -38,11 +46,9 @@ s3eResult s3eAndroidXAPKInit_platform()
     if (!obj)
         goto fail;
 
-    g_s3eAndroidXAPKGetFiles = env->GetMethodID(cls, "s3eAndroidXAPKGetFiles", "(Ljava/lang/String;LFIXME;I)V");
+    g_s3eAndroidXAPKGetFiles = env->GetMethodID(cls, "s3eAndroidXAPKGetFiles", "(Ljava/lang/String;[B;I)V");
     if (!g_s3eAndroidXAPKGetFiles)
         goto fail;
-
-
 
     IwTrace(ANDROIDXAPK, ("ANDROIDXAPK init success"));
     g_Obj = env->NewGlobalRef(obj);
@@ -79,9 +85,25 @@ s3eResult s3eAndroidXAPKUnRegister_platform(s3eAndroidXAPKCallback callbackID, s
     return S3E_RESULT_ERROR;
 }
 
-void s3eAndroidXAPKGetFiles_platform(const char* base64PublicKey, const void* salt, int32 saltLength)
+s3eResult s3eAndroidXAPKGetFiles_platform(const char* base64PublicKey, const void* salt, int32 saltLength)
 {
+    if(saltLength != 20)
+    {
+        s3eEdkErrorSet(S3E_EXT_ANDROIDXAPK_HASH, 1, S3E_EXT_ERROR_PRI_NORMAL);
+        s3eEdkErrorSetString("Salt must be 20 bytes long");
+        return S3E_RESULT_ERROR;
+    }
+
     JNIEnv* env = s3eEdkJNIGetEnv();
     jstring base64PublicKey_jstr = env->NewStringUTF(base64PublicKey);
-    env->CallVoidMethod(g_Obj, g_s3eAndroidXAPKGetFiles, base64PublicKey_jstr, salt, saltLength);
+    jbyteArray salt_jba = env->NewByteArray(saltLength);
+    env->SetByteArrayRegion(salt_jba, 0, saltLength, (jbyte*)salt);
+    env->CallVoidMethod(g_Obj, g_s3eAndroidXAPKGetFiles, base64PublicKey_jstr, salt_jba);
+    env->DeleteLocalRef(salt_jba);
+    env->DeleteLocalRef(base64PublicKey_jstr);
+}
+
+void responseReceived(JNIEnv* env, jobject obj, jobject response)
+{
+    // Do stuff here
 }

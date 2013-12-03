@@ -22,7 +22,7 @@
  */
 typedef  s3eResult(*s3eAndroidXAPKRegister_t)(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn, void* userData);
 typedef  s3eResult(*s3eAndroidXAPKUnRegister_t)(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn);
-typedef       void(*s3eAndroidXAPKGetFiles_t)(const char* base64PublicKey, const void* salt, int32 saltLength);
+typedef  s3eResult(*s3eAndroidXAPKGetFiles_t)(const char* base64PublicKey, const void* salt, int32 saltLength);
 
 /**
  * struct that gets filled in by s3eAndroidXAPKRegister
@@ -117,22 +117,22 @@ s3eResult s3eAndroidXAPKUnRegister(s3eAndroidXAPKCallback callbackID, s3eCallbac
     return ret;
 }
 
-void s3eAndroidXAPKGetFiles(const char* base64PublicKey, const void* salt, int32 saltLength)
+s3eResult s3eAndroidXAPKGetFiles(const char* base64PublicKey, const void* salt, int32 saltLength)
 {
     IwTrace(ANDROIDXAPK_VERBOSE, ("calling s3eAndroidXAPK[2] func: s3eAndroidXAPKGetFiles"));
 
     if (!_extLoad())
-        return;
+        return S3E_RESULT_ERROR;
 
 #ifdef LOADER_CALL
     s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
 #endif
 
-    g_Ext.m_s3eAndroidXAPKGetFiles(base64PublicKey, salt, saltLength);
+    s3eResult ret = g_Ext.m_s3eAndroidXAPKGetFiles(base64PublicKey, salt, saltLength);
 
 #ifdef LOADER_CALL
     s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
 #endif
 
-    return;
+    return ret;
 }
