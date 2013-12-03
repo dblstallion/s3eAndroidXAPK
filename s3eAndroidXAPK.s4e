@@ -1,0 +1,45 @@
+include:
+#include "s3eTypes.h"
+
+typedef enum s3eAndroidXAPKCallback
+{
+    /**
+     * Called after s3eAndroidXAPKGetFiles is called to return the response.
+     * systemData is a pointer to an s3eAndroidXAPKResponse instance
+     */
+	s3eAndroidXAPKCallback_ResponseReceived,
+
+	// Marker for the last callback
+	s3eAndroidXAPKCallback_MAX
+} s3eAndroidXAPKCallback;
+
+typedef enum s3eAndroidXAPKResult
+{
+    s3eAndroidXAPKResult_Success,       // Licensed and everything worked
+    s3eAndroidXAPKResult_NotAllowed,    // Definitely not licensed
+    s3eAndroidXAPKResult_Retry,         // Likely that internet is down
+    s3eAndroidXAPKResult_InvalidPackageName,
+    s3eAndroidXAPKResult_NonMatchingUID,
+    s3eAndroidXAPKResult_NotMarketManaged,
+    s3eAndroidXAPKResult_CheckInProgress,
+    s3eAndroidXAPKResult_InvalidPublicKey,
+    s3eAndroidXAPKResult_MissingPermission
+} s3eAndroidXAPKResult;
+
+typedef struct s3eAndroidXAPKFile
+{
+    const char* name;
+    const char* url;
+    int64 size;
+} s3eAndroidXAPKFile;
+
+typedef struct s3eAndroidXAPKResponse
+{
+    s3eAndroidXAPKResult result;
+    const s3eAndroidXAPKFile* files;
+    int32 fileCount;
+} s3eAndroidXAPKResponse;
+
+functions:
+
+void s3eAndroidXAPKGetFiles(const char* base64PublicKey, const void* salt, int32 saltLength)
