@@ -44,6 +44,7 @@ Discarded input sections
  .group         0x00000000        0x8 debug\s3eAndroidXAPK_platform.os
  .group         0x00000000        0x8 debug\s3eAndroidXAPK_platform.os
  .group         0x00000000        0x8 debug\s3eAndroidXAPK_platform.os
+ .group         0x00000000        0x8 debug\s3eAndroidXAPK_platform.os
  .text          0x00000000        0x0 debug\s3eAndroidXAPK_platform.os
  .data          0x00000000        0x0 debug\s3eAndroidXAPK_platform.os
  .note.GNU-stack
@@ -149,239 +150,242 @@ Memory map
 .interp         0x00000134       0x13
  ** fill        0x00000134       0x13
 
-.dynsym         0x00000148      0x5b0
- ** dynsym      0x00000148      0x5b0
+.dynsym         0x00000148      0x5d0
+ ** dynsym      0x00000148      0x5d0
 
-.dynstr         0x000006f8      0x6a1
+.dynstr         0x00000718      0x6d3
  ** string table
-                0x000006f8      0x6a1
+                0x00000718      0x6d3
 
-.hash           0x00000d9c      0x280
- ** hash        0x00000d9c      0x280
+.hash           0x00000dec      0x288
+ ** hash        0x00000dec      0x288
 
-.rel.dyn        0x0000101c       0x88
+.rel.dyn        0x00001074       0x88
  ** dynamic relocs
-                0x0000101c       0x88
+                0x00001074       0x88
 
-.rel.plt        0x000010a4       0xb0
+.rel.plt        0x000010fc       0xc0
  ** dynamic relocs
-                0x000010a4       0xb0
+                0x000010fc       0xc0
 
-.plt            0x00001154      0x11c
- ** PLT         0x00001154      0x11c
+.plt            0x000011bc      0x134
+ ** PLT         0x000011bc      0x134
 
-.text           0x00001270     0x2dfc
- .text.exit     0x00001270       0x10 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
-                0x00001270                __on_dlclose
+.text           0x000012f0     0x30d4
+ .text.exit     0x000012f0       0x10 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x000012f0                __on_dlclose
  .text._ZN7_JNIEnv9FindClassEPKc
-                0x00001280       0x38 debug\s3eAndroidXAPK_platform.os
-                0x00001280                _JNIEnv::FindClass(char const*)
+                0x00001300       0x38 debug\s3eAndroidXAPK_platform.os
+                0x00001300                _JNIEnv::FindClass(char const*)
  .text._ZN7_JNIEnv17ExceptionOccurredEv
-                0x000012b8       0x30 debug\s3eAndroidXAPK_platform.os
-                0x000012b8                _JNIEnv::ExceptionOccurred()
+                0x00001338       0x30 debug\s3eAndroidXAPK_platform.os
+                0x00001338                _JNIEnv::ExceptionOccurred()
  .text._ZN7_JNIEnv17ExceptionDescribeEv
-                0x000012e8       0x28 debug\s3eAndroidXAPK_platform.os
-                0x000012e8                _JNIEnv::ExceptionDescribe()
+                0x00001368       0x28 debug\s3eAndroidXAPK_platform.os
+                0x00001368                _JNIEnv::ExceptionDescribe()
  .text._ZN7_JNIEnv14ExceptionClearEv
-                0x00001310       0x28 debug\s3eAndroidXAPK_platform.os
-                0x00001310                _JNIEnv::ExceptionClear()
+                0x00001390       0x28 debug\s3eAndroidXAPK_platform.os
+                0x00001390                _JNIEnv::ExceptionClear()
  .text._ZN7_JNIEnv12NewGlobalRefEP8_jobject
-                0x00001338       0x38 debug\s3eAndroidXAPK_platform.os
-                0x00001338                _JNIEnv::NewGlobalRef(_jobject*)
+                0x000013b8       0x38 debug\s3eAndroidXAPK_platform.os
+                0x000013b8                _JNIEnv::NewGlobalRef(_jobject*)
  .text._ZN7_JNIEnv15DeleteGlobalRefEP8_jobject
-                0x00001370       0x30 debug\s3eAndroidXAPK_platform.os
-                0x00001370                _JNIEnv::DeleteGlobalRef(_jobject*)
+                0x000013f0       0x30 debug\s3eAndroidXAPK_platform.os
+                0x000013f0                _JNIEnv::DeleteGlobalRef(_jobject*)
  .text._ZN7_JNIEnv14DeleteLocalRefEP8_jobject
-                0x000013a0       0x30 debug\s3eAndroidXAPK_platform.os
-                0x000013a0                _JNIEnv::DeleteLocalRef(_jobject*)
+                0x00001420       0x30 debug\s3eAndroidXAPK_platform.os
+                0x00001420                _JNIEnv::DeleteLocalRef(_jobject*)
  .text._ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz
-                0x000013d0       0x58 debug\s3eAndroidXAPK_platform.os
-                0x000013d0                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
+                0x00001450       0x58 debug\s3eAndroidXAPK_platform.os
+                0x00001450                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
  .text._ZN7_JNIEnv11GetMethodIDEP7_jclassPKcS3_
-                0x00001428       0x48 debug\s3eAndroidXAPK_platform.os
-                0x00001428                _JNIEnv::GetMethodID(_jclass*, char const*, char const*)
+                0x000014a8       0x48 debug\s3eAndroidXAPK_platform.os
+                0x000014a8                _JNIEnv::GetMethodID(_jclass*, char const*, char const*)
  .text._ZN7_JNIEnv14CallVoidMethodEP8_jobjectP10_jmethodIDz
-                0x00001470       0x4c debug\s3eAndroidXAPK_platform.os
-                0x00001470                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
+                0x000014f0       0x4c debug\s3eAndroidXAPK_platform.os
+                0x000014f0                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv10GetFieldIDEP7_jclassPKcS3_
+                0x0000153c       0x48 debug\s3eAndroidXAPK_platform.os
+                0x0000153c                _JNIEnv::GetFieldID(_jclass*, char const*, char const*)
  .text._ZN7_JNIEnv12NewStringUTFEPKc
-                0x000014bc       0x38 debug\s3eAndroidXAPK_platform.os
-                0x000014bc                _JNIEnv::NewStringUTF(char const*)
+                0x00001584       0x38 debug\s3eAndroidXAPK_platform.os
+                0x00001584                _JNIEnv::NewStringUTF(char const*)
  .text._ZN7_JNIEnv12NewByteArrayEi
-                0x000014f4       0x38 debug\s3eAndroidXAPK_platform.os
-                0x000014f4                _JNIEnv::NewByteArray(int)
+                0x000015bc       0x38 debug\s3eAndroidXAPK_platform.os
+                0x000015bc                _JNIEnv::NewByteArray(int)
  .text._ZN7_JNIEnv18SetByteArrayRegionEP11_jbyteArrayiiPKa
-                0x0000152c       0x48 debug\s3eAndroidXAPK_platform.os
-                0x0000152c                _JNIEnv::SetByteArrayRegion(_jbyteArray*, int, int, signed char const*)
+                0x000015f4       0x48 debug\s3eAndroidXAPK_platform.os
+                0x000015f4                _JNIEnv::SetByteArrayRegion(_jbyteArray*, int, int, signed char const*)
  .text._ZN7_JNIEnv15RegisterNativesEP7_jclassPK15JNINativeMethodi
-                0x00001574       0x48 debug\s3eAndroidXAPK_platform.os
-                0x00001574                _JNIEnv::RegisterNatives(_jclass*, JNINativeMethod const*, int)
+                0x0000163c       0x48 debug\s3eAndroidXAPK_platform.os
+                0x0000163c                _JNIEnv::RegisterNatives(_jclass*, JNINativeMethod const*, int)
  .text._ZN7_JavaVM6GetEnvEPPvi
-                0x000015bc       0x40 debug\s3eAndroidXAPK_platform.os
-                0x000015bc                _JavaVM::GetEnv(void**, int)
+                0x00001684       0x40 debug\s3eAndroidXAPK_platform.os
+                0x00001684                _JavaVM::GetEnv(void**, int)
  .text._ZL15s3eEdkJNIGetEnvv
-                0x000015fc       0x40 debug\s3eAndroidXAPK_platform.os
+                0x000016c4       0x40 debug\s3eAndroidXAPK_platform.os
  .text._ZL27s3eEdkAndroidFindClass_realPKc
-                0x0000163c       0x8c debug\s3eAndroidXAPK_platform.os
+                0x00001704       0x8c debug\s3eAndroidXAPK_platform.os
  .text._ZL22s3eEdkAndroidFindClassPKc
-                0x000016c8       0x38 debug\s3eAndroidXAPK_platform.os
+                0x00001790       0x38 debug\s3eAndroidXAPK_platform.os
  .text._Z27s3eAndroidXAPKInit_platformv
-                0x00001700      0x280 debug\s3eAndroidXAPK_platform.os
-                0x00001700                s3eAndroidXAPKInit_platform()
+                0x000017c8      0x4b4 debug\s3eAndroidXAPK_platform.os
+                0x000017c8                s3eAndroidXAPKInit_platform()
  .text._Z32s3eAndroidXAPKTerminate_platformv
-                0x00001980        0x4 debug\s3eAndroidXAPK_platform.os
-                0x00001980                s3eAndroidXAPKTerminate_platform()
+                0x00001c7c        0x4 debug\s3eAndroidXAPK_platform.os
+                0x00001c7c                s3eAndroidXAPKTerminate_platform()
  .text._Z31s3eAndroidXAPKRegister_platform22s3eAndroidXAPKCallbackPFiPvS0_ES0_
-                0x00001984       0x20 debug\s3eAndroidXAPK_platform.os
-                0x00001984                s3eAndroidXAPKRegister_platform(s3eAndroidXAPKCallback, int (*)(void*, void*), void*)
+                0x00001c80       0x50 debug\s3eAndroidXAPK_platform.os
+                0x00001c80                s3eAndroidXAPKRegister_platform(s3eAndroidXAPKCallback, int (*)(void*, void*), void*)
  .text._Z33s3eAndroidXAPKUnRegister_platform22s3eAndroidXAPKCallbackPFiPvS0_E
-                0x000019a4       0x1c debug\s3eAndroidXAPK_platform.os
-                0x000019a4                s3eAndroidXAPKUnRegister_platform(s3eAndroidXAPKCallback, int (*)(void*, void*))
+                0x00001cd0       0x44 debug\s3eAndroidXAPK_platform.os
+                0x00001cd0                s3eAndroidXAPKUnRegister_platform(s3eAndroidXAPKCallback, int (*)(void*, void*))
  .text._Z31s3eAndroidXAPKGetFiles_platformPKcPKvi
-                0x000019c0       0xf4 debug\s3eAndroidXAPK_platform.os
-                0x000019c0                s3eAndroidXAPKGetFiles_platform(char const*, void const*, int)
+                0x00001d14       0xf8 debug\s3eAndroidXAPK_platform.os
+                0x00001d14                s3eAndroidXAPKGetFiles_platform(char const*, void const*, int)
  .text._Z16responseReceivedP7_JNIEnvP8_jobjectS2_
-                0x00001ab4       0x18 debug\s3eAndroidXAPK_platform.os
-                0x00001ab4                responseReceived(_JNIEnv*, _jobject*, _jobject*)
+                0x00001e0c       0x18 debug\s3eAndroidXAPK_platform.os
+                0x00001e0c                responseReceived(_JNIEnv*, _jobject*, _jobject*)
  .text._Z18s3eAndroidXAPKInitv
-                0x00001acc       0x14 debug\s3eAndroidXAPK.os
-                0x00001acc                s3eAndroidXAPKInit()
+                0x00001e24       0x14 debug\s3eAndroidXAPK.os
+                0x00001e24                s3eAndroidXAPKInit()
  .text._Z23s3eAndroidXAPKTerminatev
-                0x00001ae0        0xc debug\s3eAndroidXAPK.os
-                0x00001ae0                s3eAndroidXAPKTerminate()
+                0x00001e38        0xc debug\s3eAndroidXAPK.os
+                0x00001e38                s3eAndroidXAPKTerminate()
  .text.s3eAndroidXAPKRegister
-                0x00001aec       0x34 debug\s3eAndroidXAPK.os
-                0x00001aec                s3eAndroidXAPKRegister
+                0x00001e44       0x34 debug\s3eAndroidXAPK.os
+                0x00001e44                s3eAndroidXAPKRegister
  .text.s3eAndroidXAPKUnRegister
-                0x00001b20       0x2c debug\s3eAndroidXAPK.os
-                0x00001b20                s3eAndroidXAPKUnRegister
+                0x00001e78       0x2c debug\s3eAndroidXAPK.os
+                0x00001e78                s3eAndroidXAPKUnRegister
  .text.s3eAndroidXAPKGetFiles
-                0x00001b4c       0x34 debug\s3eAndroidXAPK.os
-                0x00001b4c                s3eAndroidXAPKGetFiles
+                0x00001ea4       0x34 debug\s3eAndroidXAPK.os
+                0x00001ea4                s3eAndroidXAPKGetFiles
  .text._Z25s3eAndroidXAPKRegisterExtv
-                0x00001b80       0xbc debug\s3eAndroidXAPK_register.os
-                0x00001b80                s3eAndroidXAPKRegisterExt()
+                0x00001ed8       0xbc debug\s3eAndroidXAPK_register.os
+                0x00001ed8                s3eAndroidXAPKRegisterExt()
  .text.RegisterExt
-                0x00001c3c        0xc debug\s3eAndroidXAPK_register.os
-                0x00001c3c                RegisterExt
+                0x00001f94        0xc debug\s3eAndroidXAPK_register.os
+                0x00001f94                RegisterExt
  .text.IwDebugTraceSetTraceChannel
-                0x00001c48       0x1c C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
-                0x00001c48                IwDebugTraceSetTraceChannel
+                0x00001fa0       0x1c C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x00001fa0                IwDebugTraceSetTraceChannel
  .text._GLOBAL__I_Z__sdk_modules_iwcore_source_IwDebug.cpp
-                0x00001c64       0xa4 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x00001fbc       0xa4 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
  .text.IwDebugTraceIsChannelOn
-                0x00001d08      0x2b8 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
-                0x00001d08                IwDebugTraceIsChannelOn
+                0x00002060      0x2b8 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x00002060                IwDebugTraceIsChannelOn
  .text.IwDebugTraceLinePrintf
-                0x00001fc0      0x10c C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
-                0x00001fc0                IwDebugTraceLinePrintf
+                0x00002318      0x10c C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x00002318                IwDebugTraceLinePrintf
  .text.s3eEdkThreadRunOnOS
-                0x000020cc       0x30 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
-                0x000020cc                s3eEdkThreadRunOnOS
+                0x00002424       0x30 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                0x00002424                s3eEdkThreadRunOnOS
  .text.s3eEdkErrorSetString
-                0x000020fc       0x30 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
-                0x000020fc                s3eEdkErrorSetString
- .text          0x0000212c       0x44 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_aeabi_ldivmod.o)
-                0x0000212c                __aeabi_ldivmod
- .text          0x00002170       0x10 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_dvmd_lnx.o)
-                0x00002170                __aeabi_idiv0
-                0x00002170                __aeabi_ldiv0
- .text          0x00002180       0x78 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(bpabi.o)
-                0x00002180                __gnu_ldivmod_helper
-                0x000021bc                __gnu_uldivmod_helper
- .text          0x000021f8      0x480 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_divdi3.o)
-                0x000021f8                __divdi3
- .text          0x00002678      0x400 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_udivdi3.o)
-                0x00002678                __udivdi3
- .text          0x00002a78      0xef4 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(unwind-arm.o)
-                0x00003544                __aeabi_unwind_cpp_pr0
-                0x0000353c                __aeabi_unwind_cpp_pr1
-                0x00003534                __aeabi_unwind_cpp_pr2
-                0x00002eb4                _Unwind_GetCFA
-                0x00002ebc                __gnu_Unwind_RaiseException
-                0x00002f60                __gnu_Unwind_ForcedUnwind
-                0x00002f7c                __gnu_Unwind_Resume
-                0x00002ff4                __gnu_Unwind_Resume_or_Rethrow
-                0x00003014                _Unwind_Complete
-                0x00003018                _Unwind_DeleteException
-                0x00003038                _Unwind_VRS_Get
-                0x000030a4                _Unwind_VRS_Set
-                0x0000354c                __gnu_Unwind_Backtrace
-                0x0000360c                _Unwind_VRS_Pop
- .text          0x0000396c      0x1a8 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(libunwind.o)
-                0x0000396c                __restore_core_regs
-                0x0000396c                restore_core_regs
-                0x00003980                __gnu_Unwind_Restore_VFP
-                0x00003988                __gnu_Unwind_Save_VFP
-                0x00003990                __gnu_Unwind_Restore_VFP_D
-                0x00003998                __gnu_Unwind_Save_VFP_D
-                0x000039a0                __gnu_Unwind_Restore_VFP_D_16_to_31
-                0x000039a8                __gnu_Unwind_Save_VFP_D_16_to_31
-                0x000039b0                __gnu_Unwind_Restore_WMMXD
-                0x000039f4                __gnu_Unwind_Save_WMMXD
-                0x00003a38                __gnu_Unwind_Restore_WMMXC
-                0x00003a4c                __gnu_Unwind_Save_WMMXC
-                0x00003a60                ___Unwind_RaiseException
-                0x00003a60                _Unwind_RaiseException
-                0x00003a84                ___Unwind_Resume
-                0x00003a84                _Unwind_Resume
-                0x00003aa8                ___Unwind_Resume_or_Rethrow
-                0x00003aa8                _Unwind_Resume_or_Rethrow
-                0x00003acc                ___Unwind_ForcedUnwind
-                0x00003acc                _Unwind_ForcedUnwind
-                0x00003af0                ___Unwind_Backtrace
-                0x00003af0                _Unwind_Backtrace
- .text          0x00003b14      0x490 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(pr-support.o)
-                0x00003b9c                __gnu_unwind_execute
-                0x00003f28                __gnu_unwind_frame
-                0x00003f68                _Unwind_GetRegionStart
-                0x00003f78                _Unwind_GetLanguageSpecificData
-                0x00003f94                _Unwind_GetDataRelBase
-                0x00003f9c                _Unwind_GetTextRelBase
+                0x00002454       0x30 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                0x00002454                s3eEdkErrorSetString
+ .text          0x00002484       0x44 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_aeabi_ldivmod.o)
+                0x00002484                __aeabi_ldivmod
+ .text          0x000024c8       0x10 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_dvmd_lnx.o)
+                0x000024c8                __aeabi_idiv0
+                0x000024c8                __aeabi_ldiv0
+ .text          0x000024d8       0x78 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(bpabi.o)
+                0x000024d8                __gnu_ldivmod_helper
+                0x00002514                __gnu_uldivmod_helper
+ .text          0x00002550      0x480 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_divdi3.o)
+                0x00002550                __divdi3
+ .text          0x000029d0      0x400 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_udivdi3.o)
+                0x000029d0                __udivdi3
+ .text          0x00002dd0      0xef4 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(unwind-arm.o)
+                0x0000389c                __aeabi_unwind_cpp_pr0
+                0x00003894                __aeabi_unwind_cpp_pr1
+                0x0000388c                __aeabi_unwind_cpp_pr2
+                0x0000320c                _Unwind_GetCFA
+                0x00003214                __gnu_Unwind_RaiseException
+                0x000032b8                __gnu_Unwind_ForcedUnwind
+                0x000032d4                __gnu_Unwind_Resume
+                0x0000334c                __gnu_Unwind_Resume_or_Rethrow
+                0x0000336c                _Unwind_Complete
+                0x00003370                _Unwind_DeleteException
+                0x00003390                _Unwind_VRS_Get
+                0x000033fc                _Unwind_VRS_Set
+                0x000038a4                __gnu_Unwind_Backtrace
+                0x00003964                _Unwind_VRS_Pop
+ .text          0x00003cc4      0x1a8 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(libunwind.o)
+                0x00003cc4                __restore_core_regs
+                0x00003cc4                restore_core_regs
+                0x00003cd8                __gnu_Unwind_Restore_VFP
+                0x00003ce0                __gnu_Unwind_Save_VFP
+                0x00003ce8                __gnu_Unwind_Restore_VFP_D
+                0x00003cf0                __gnu_Unwind_Save_VFP_D
+                0x00003cf8                __gnu_Unwind_Restore_VFP_D_16_to_31
+                0x00003d00                __gnu_Unwind_Save_VFP_D_16_to_31
+                0x00003d08                __gnu_Unwind_Restore_WMMXD
+                0x00003d4c                __gnu_Unwind_Save_WMMXD
+                0x00003d90                __gnu_Unwind_Restore_WMMXC
+                0x00003da4                __gnu_Unwind_Save_WMMXC
+                0x00003db8                ___Unwind_RaiseException
+                0x00003db8                _Unwind_RaiseException
+                0x00003ddc                ___Unwind_Resume
+                0x00003ddc                _Unwind_Resume
+                0x00003e00                ___Unwind_Resume_or_Rethrow
+                0x00003e00                _Unwind_Resume_or_Rethrow
+                0x00003e24                ___Unwind_ForcedUnwind
+                0x00003e24                _Unwind_ForcedUnwind
+                0x00003e48                ___Unwind_Backtrace
+                0x00003e48                _Unwind_Backtrace
+ .text          0x00003e6c      0x490 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(pr-support.o)
+                0x00003ef4                __gnu_unwind_execute
+                0x00004280                __gnu_unwind_frame
+                0x000042c0                _Unwind_GetRegionStart
+                0x000042d0                _Unwind_GetLanguageSpecificData
+                0x000042ec                _Unwind_GetDataRelBase
+                0x000042f4                _Unwind_GetTextRelBase
  .text          0xffffffffffffffff       0xc8 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_udivsi3.o)
-                0x00003fa4                __udivsi3
-                0x00003fa4                __aeabi_uidiv
-                0x0000404c                __aeabi_uidivmod
+                0x000042fc                __udivsi3
+                0x000042fc                __aeabi_uidiv
+                0x000043a4                __aeabi_uidivmod
 
-.rodata         0x0000406c      0x224
- .rodata        0x0000406c       0xf4 debug\s3eAndroidXAPK_platform.os
- .rodata        0x00004160       0x10 debug\s3eAndroidXAPK_register.os
+.rodata         0x000043c4      0x2a8
+ .rodata        0x000043c4      0x178 debug\s3eAndroidXAPK_platform.os
+ .rodata        0x0000453c       0x10 debug\s3eAndroidXAPK_register.os
  .rodata.str1.4
-                0x00004170      0x120 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x0000454c      0x120 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
 
-.ARM.exidx      0x00004290       0xe8
- .ARM.exidx     0x00004290        0x8 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_divdi3.o)
+.ARM.exidx      0x0000466c       0xe8
+ .ARM.exidx     0x0000466c        0x8 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_divdi3.o)
  .ARM.exidx     0xffffffffffffffff       0xd8 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(unwind-arm.o)
  ** ARM cantunwind
-                0x00004338        0x8
+                0x00004714        0x8
  .ARM.exidx     0xffffffffffffffff       0x48 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(pr-support.o)
 
-.ARM.extab      0x00004378       0x3c
- .ARM.extab     0x00004378       0x24 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(unwind-arm.o)
- .ARM.extab     0x0000439c       0x18 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(pr-support.o)
+.ARM.extab      0x00004754       0x3c
+ .ARM.extab     0x00004754       0x24 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(unwind-arm.o)
+ .ARM.extab     0x00004778       0x18 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(pr-support.o)
 
-.fini_array     0x00005e70        0x8
- .fini_array    0x00005e70        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
- .fini_array    0x00005e74        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+.fini_array     0x00005e68        0x8
+ .fini_array    0x00005e68        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00005e6c        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
-.data.rel.ro    0x00005e78        0xc
- .data.rel.ro   0x00005e78        0xc debug\s3eAndroidXAPK_platform.os
+.data.rel.ro    0x00005e70        0xc
+ .data.rel.ro   0x00005e70        0xc debug\s3eAndroidXAPK_platform.os
 
-.init_array     0x00005e84        0x8
- .init_array    0x00005e84        0x4 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
- .init_array    0x00005e88        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+.init_array     0x00005e7c        0x8
+ .init_array    0x00005e7c        0x4 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .init_array    0x00005e80        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
-.dynamic        0x00005e8c       0xe0
- ** dynamic     0x00005e8c       0xe0
+.dynamic        0x00005e84       0xe0
+ ** dynamic     0x00005e84       0xe0
 
-.got            0x00005f6c       0x94
- ** GOT         0x00005f6c       0x30
- ** GOT PLT     0x00005f9c       0x64
+.got            0x00005f64       0x9c
+ ** GOT         0x00005f64       0x30
+ ** GOT PLT     0x00005f94       0x6c
 
 .data           0x00006000        0x4
  .data          0x00006000        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
                 0x00006000                __dso_handle
 
-.bss            0x00006004     0x1a30
- .bss           0x00006004        0x8 debug\s3eAndroidXAPK_platform.os
- .bss           0x0000600c     0x1a28 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
-                0x0000600c                g_DebugGlobals
+.bss            0x00006004     0x1a44
+ .bss           0x00006004       0x1c debug\s3eAndroidXAPK_platform.os
+ .bss           0x00006020     0x1a28 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x00006020                g_DebugGlobals
