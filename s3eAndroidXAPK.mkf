@@ -38,5 +38,6 @@ if {{ not defined IW_MKF_IWCRT}}
 deployments
 {
     android-external-jars="lib/android/s3eAndroidXAPK.jar"
+    android-external-jars="lib/android/lvlibrary.jar"
     android-so="lib/android/libs3eAndroidXAPK.so"
 }

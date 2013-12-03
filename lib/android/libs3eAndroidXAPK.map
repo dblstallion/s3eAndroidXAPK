@@ -113,11 +113,11 @@ Memory map
                 0xffffffffffffffff       0x30 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(edk_helpers.o)
                 0x00000b34                s3eEdkErrorSetString
 
-.rodata         0x00000b64      0x134
+.rodata         0x00000b64      0x130
  .rodata.str1.4
-                0x00000b64      0x124 release\s3eAndroidXAPK_platform.os
+                0x00000b64      0x120 release\s3eAndroidXAPK_platform.os
  .rodata.str1.4
-                0x00000c88       0x10 release\s3eAndroidXAPK_register.os
+                0x00000c84       0x10 release\s3eAndroidXAPK_register.os
 
 .fini_array     0x00001ecc        0x8
  .fini_array    0x00001ecc        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o

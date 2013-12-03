@@ -334,22 +334,22 @@ Memory map
                 0x00004320                __aeabi_uidiv
                 0x000043c8                __aeabi_uidivmod
 
-.rodata         0x000043e8      0x2bc
- .rodata        0x000043e8      0x18c debug\s3eAndroidXAPK_platform.os
- .rodata        0x00004574       0x10 debug\s3eAndroidXAPK_register.os
+.rodata         0x000043e8      0x2b8
+ .rodata        0x000043e8      0x188 debug\s3eAndroidXAPK_platform.os
+ .rodata        0x00004570       0x10 debug\s3eAndroidXAPK_register.os
  .rodata.str1.4
-                0x00004584      0x120 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x00004580      0x120 C:\Marmalade\6.4\s3e\edk\lib\android/libedk.a(IwDebug.o)
 
-.ARM.exidx      0x000046a4       0xe8
- .ARM.exidx     0x000046a4        0x8 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_divdi3.o)
+.ARM.exidx      0x000046a0       0xe8
+ .ARM.exidx     0x000046a0        0x8 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(_divdi3.o)
  .ARM.exidx     0xffffffffffffffff       0xd8 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(unwind-arm.o)
  ** ARM cantunwind
-                0x0000474c        0x8
+                0x00004748        0x8
  .ARM.exidx     0xffffffffffffffff       0x48 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(pr-support.o)
 
-.ARM.extab      0x0000478c       0x3c
- .ARM.extab     0x0000478c       0x24 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(unwind-arm.o)
- .ARM.extab     0x000047b0       0x18 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(pr-support.o)
+.ARM.extab      0x00004788       0x3c
+ .ARM.extab     0x00004788       0x24 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(unwind-arm.o)
+ .ARM.extab     0x000047ac       0x18 c:/program files/adt-bundle-windows-x86_64-20130717/android-ndk-r8d/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.7/libgcc.a(pr-support.o)
 
 .fini_array     0x00005e6c        0x8
  .fini_array    0x00005e6c        0x4 C:/Program Files/adt-bundle-windows-x86_64-20130717/android-ndk-r8e/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o

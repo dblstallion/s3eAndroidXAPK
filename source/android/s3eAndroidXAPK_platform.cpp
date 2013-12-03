@@ -67,7 +67,7 @@ s3eResult s3eAndroidXAPKInit_platform()
     if (!obj)
         goto fail;
 
-    g_s3eAndroidXAPKGetFiles = env->GetMethodID(cls, "s3eAndroidXAPKGetFiles", "(Ljava/lang/String;[B;I)V");
+    g_s3eAndroidXAPKGetFiles = env->GetMethodID(cls, "s3eAndroidXAPKGetFiles", "(Ljava/lang/String;[B)V");
     if (!g_s3eAndroidXAPKGetFiles)
         goto fail;
 
