@@ -20,6 +20,8 @@
 /**
  * Definitions for functions types passed to/from s3eExt interface
  */
+typedef  s3eResult(*s3eAndroidXAPKRegister_t)(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn, void* userData);
+typedef  s3eResult(*s3eAndroidXAPKUnRegister_t)(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn);
 typedef       void(*s3eAndroidXAPKGetFiles_t)(const char* base64PublicKey, const void* salt, int32 saltLength);
 
 /**
@@ -27,6 +29,8 @@ typedef       void(*s3eAndroidXAPKGetFiles_t)(const char* base64PublicKey, const
  */
 typedef struct s3eAndroidXAPKFuncs
 {
+    s3eAndroidXAPKRegister_t m_s3eAndroidXAPKRegister;
+    s3eAndroidXAPKUnRegister_t m_s3eAndroidXAPKUnRegister;
     s3eAndroidXAPKGetFiles_t m_s3eAndroidXAPKGetFiles;
 } s3eAndroidXAPKFuncs;
 
@@ -73,9 +77,49 @@ s3eBool s3eAndroidXAPKAvailable()
     return g_GotExt ? S3E_TRUE : S3E_FALSE;
 }
 
+s3eResult s3eAndroidXAPKRegister(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn, void* userData)
+{
+    IwTrace(ANDROIDXAPK_VERBOSE, ("calling s3eAndroidXAPK[0] func: s3eAndroidXAPKRegister"));
+
+    if (!_extLoad())
+        return S3E_RESULT_ERROR;
+
+#ifdef LOADER_CALL
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    s3eResult ret = g_Ext.m_s3eAndroidXAPKRegister(callbackID, callbackFn, userData);
+
+#ifdef LOADER_CALL
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
+s3eResult s3eAndroidXAPKUnRegister(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn)
+{
+    IwTrace(ANDROIDXAPK_VERBOSE, ("calling s3eAndroidXAPK[1] func: s3eAndroidXAPKUnRegister"));
+
+    if (!_extLoad())
+        return S3E_RESULT_ERROR;
+
+#ifdef LOADER_CALL
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    s3eResult ret = g_Ext.m_s3eAndroidXAPKUnRegister(callbackID, callbackFn);
+
+#ifdef LOADER_CALL
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
 void s3eAndroidXAPKGetFiles(const char* base64PublicKey, const void* salt, int32 saltLength)
 {
-    IwTrace(ANDROIDXAPK_VERBOSE, ("calling s3eAndroidXAPK[0] func: s3eAndroidXAPKGetFiles"));
+    IwTrace(ANDROIDXAPK_VERBOSE, ("calling s3eAndroidXAPK[2] func: s3eAndroidXAPKGetFiles"));
 
     if (!_extLoad())
         return;

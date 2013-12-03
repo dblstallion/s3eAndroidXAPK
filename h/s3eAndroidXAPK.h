@@ -65,6 +65,10 @@ S3E_BEGIN_C_DECL
  */
 s3eBool s3eAndroidXAPKAvailable();
 
+s3eResult s3eAndroidXAPKRegister(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn, void* userData);
+
+s3eResult s3eAndroidXAPKUnRegister(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn);
+
 void s3eAndroidXAPKGetFiles(const char* base64PublicKey, const void* salt, int32 saltLength);
 
 S3E_END_C_DECL

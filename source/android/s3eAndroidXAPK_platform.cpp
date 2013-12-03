@@ -38,7 +38,6 @@ s3eResult s3eAndroidXAPKInit_platform()
     if (!obj)
         goto fail;
 
-    // Get all the extension methods
     g_s3eAndroidXAPKGetFiles = env->GetMethodID(cls, "s3eAndroidXAPKGetFiles", "(Ljava/lang/String;LFIXME;I)V");
     if (!g_s3eAndroidXAPKGetFiles)
         goto fail;
@@ -68,6 +67,16 @@ fail:
 void s3eAndroidXAPKTerminate_platform()
 {
     // Add any platform-specific termination code here
+}
+
+s3eResult s3eAndroidXAPKRegister_platform(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn, void* userData)
+{
+    return S3E_RESULT_ERROR;
+}
+
+s3eResult s3eAndroidXAPKUnRegister_platform(s3eAndroidXAPKCallback callbackID, s3eCallback callbackFn)
+{
+    return S3E_RESULT_ERROR;
 }
 
 void s3eAndroidXAPKGetFiles_platform(const char* base64PublicKey, const void* salt, int32 saltLength)
