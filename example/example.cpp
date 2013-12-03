@@ -13,7 +13,42 @@ static const char *g_Status = "Waiting for request";
 
 int32 responseReceived(void *systemData, void *userData)
 {
-    g_Status = "Response received";
+    s3eAndroidXAPKResponse *response = (s3eAndroidXAPKResponse*)systemData;
+
+    switch(response->result)
+    {
+    case s3eAndroidXAPKResult_CheckInProgress:
+        g_Status = "Check in progress";
+        break;
+    case s3eAndroidXAPKResult_InvalidPackageName:
+        g_Status = "Invalid package name";
+        break;
+    case s3eAndroidXAPKResult_InvalidPublicKey:
+        g_Status = "Invalid public key";
+        break;
+    case s3eAndroidXAPKResult_MissingPermission:
+        g_Status = "Missing permission";
+        break;
+    case s3eAndroidXAPKResult_NonMatchingUID:
+        g_Status = "Non matching UID";
+        break;
+    case s3eAndroidXAPKResult_NotAllowed:
+        g_Status = "License check result: not allowed";
+        break;
+    case s3eAndroidXAPKResult_NotMarketManaged:
+        g_Status = "Not market managed";
+        break;
+    case s3eAndroidXAPKResult_Retry:
+        g_Status = "Cannot perform check, try again later";
+        break;
+    case s3eAndroidXAPKResult_Success:
+        g_Status = "License check suceeded";
+        break;
+    default:
+        g_Status = "Unknown response received";
+        break;
+    }
+
     return 0;
 }
 

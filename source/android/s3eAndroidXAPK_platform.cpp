@@ -35,7 +35,8 @@ static jfieldID g_fileSize;
 static jfieldID g_responseResult;
 static jfieldID g_responseFiles;
 
-void responseReceived(JNIEnv* env, jobject obj, jobject response);
+void responseReceived(JNIEnv* env, jobject obj, jobject responseObj);
+void responseCleanup(uint32 extID, int32 notification, void* systemData, void* instance, int32 returnCode, void* completeData);
 
 s3eResult s3eAndroidXAPKInit_platform()
 {
@@ -150,11 +151,19 @@ s3eResult s3eAndroidXAPKGetFiles_platform(const char* base64PublicKey, const voi
     return S3E_RESULT_SUCCESS;
 }
 
-void responseReceived(JNIEnv* env, jobject obj, jobject response)
+void responseReceived(JNIEnv* env, jobject obj, jobject responseObj)
 {
     IwTrace(s3eAndroidXAPK, ("Response received"));
     if (s3eEdkCallbacksIsRegistered(S3E_EXT_ANDROIDXAPK_HASH, s3eAndroidXAPKCallback_ResponseReceived))
     {
-        s3eEdkCallbacksEnqueue(S3E_EXT_ANDROIDXAPK_HASH, s3eAndroidXAPKCallback_ResponseReceived, NULL, 0, NULL, true);
+        s3eAndroidXAPKResponse response;
+        response.result = (s3eAndroidXAPKResult)env->GetIntField(responseObj, g_responseResult);
+        response.fileCount = 0;
+        response.files = NULL;
+        s3eEdkCallbacksEnqueue(S3E_EXT_ANDROIDXAPK_HASH, s3eAndroidXAPKCallback_ResponseReceived, &response, sizeof(response), NULL, true, responseCleanup);
     }
+}
+
+void responseCleanup(uint32 extID, int32 notification, void* systemData, void* instance, int32 returnCode, void* completeData)
+{
 }
