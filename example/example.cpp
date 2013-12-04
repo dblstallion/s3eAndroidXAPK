@@ -10,6 +10,7 @@
 #include <sstream>
 
 static const char *g_Status = "Waiting for request";
+static char g_Files[2048] = "";
 
 int32 responseReceived(void *systemData, void *userData)
 {
@@ -49,6 +50,14 @@ int32 responseReceived(void *systemData, void *userData)
         break;
     }
 
+    int length = 0;
+    length += sprintf(g_Files + length, "File count: %d\n", response->fileCount);
+
+    for(int i = 0; i < response->fileCount; i++)
+    {
+        length += sprintf(g_Files + length, "File: %s %s %d\n", response->files[i].name, response->files[i].url, response->files[i].size);
+    }
+
     return 0;
 }
 
@@ -60,7 +69,7 @@ void buttonEvent(s3ePointerTouchEvent *event)
     {
         g_Status = "Sending request";
 
-        s3eAndroidXAPKGetFiles("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxlbYXIzMCHNWwtZ3lDUCqJlYNzv/5PqG/VeOK3PGOY3G2ax9eINebzy6XJIrScABZ3os5b8SBF7HcbFBlo0/qe8gByb/j4chqg1nEWdnEjhnr5V4lQdgWKfCvSt2v7/QAKBT7YtMa3Dqi9F9xSTHiITj4y5sxjkMItOi1O8MbT4PSIqel6t/K8qMtsv+VQvLCzNB02KtzfVJVtA6zrUQYV5M7GjaLTkD2uFeTDjJf8Heom0A4ydVvE0J7zMiU9HMS01LvEOIvej1jSiYEp5qIWCpz6lV5FvwWtHQw+6ACfekV7qfo0PLqdMPFv6UCdSBzKOz0gPf9rzeHQuxmSk9lwIDAQAB", "ASDJSAHDKASDUWANDSADHASDPWDJASD", 20, &responseReceived, NULL);
+        s3eAndroidXAPKGetFiles("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxlbYXIzMCHNWwtZ3lDUCqJlYNzv/5PqG/VeOK3PGOY3G2ax9eINebzy6XJIrScABZ3os5b8SBF7HcbFBlo0/qe8gByb/j4chqg1nEWdnEjhnr5V4lQdgWKfCvSt2v7/QAKBT7YtMa3Dqi9F9xSTHiITj4y5sxjkMItOi1O8MbT4PSIqel6t/K8qMtsv+VQvLCzNB02KtzfVJVtA6zrUQYV5M7GjaLTkD2uFeTDjJf8Heom0A4ydVvE0J7zMiU9HMS01LvEOIvej1jSiYEp5qIWCpz6lV5FvwWtHQw+6ACfekV7qfo0PLqdMPFv6UCdSBzKOz0gPf9rzeHQuxmSk9lwIDAQAB", "523**3145123DKASDUWANDSADHASDPWDJASD", 20, &responseReceived, NULL);
     }
 }
 
@@ -86,6 +95,8 @@ int main()
         IwGxPrintString(100, 100, "s3eAndroidXAPK");
 
         IwGxPrintString(100, 300, g_Status);
+
+        IwGxPrintString(100, 400, g_Files);
 
         IwGxFlush();
         IwGxSwapBuffers();

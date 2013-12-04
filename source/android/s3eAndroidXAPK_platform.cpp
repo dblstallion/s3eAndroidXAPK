@@ -156,14 +156,55 @@ void responseReceived(JNIEnv* env, jobject obj, jobject responseObj)
     IwTrace(s3eAndroidXAPK, ("Response received"));
     if (s3eEdkCallbacksIsRegistered(S3E_EXT_ANDROIDXAPK_HASH, s3eAndroidXAPKCallback_ResponseReceived))
     {
+        IwTrace(s3eAndroidXAPK, ("Creating response object"));
         s3eAndroidXAPKResponse response;
+
         response.result = (s3eAndroidXAPKResult)env->GetIntField(responseObj, g_responseResult);
-        response.fileCount = 0;
-        response.files = NULL;
+        jobjectArray fileArray = (jobjectArray)env->GetObjectField(responseObj, g_responseFiles);
+        if(fileArray)
+        {
+            jsize count = env->GetArrayLength(fileArray);
+
+            response.fileCount = count;
+            s3eAndroidXAPKFile* files = reinterpret_cast<s3eAndroidXAPKFile*>(s3eEdkMallocOS(count * sizeof(s3eAndroidXAPKFile)));
+            for(int i = 0; i < count; ++i)
+            {
+                jobject file = env->GetObjectArrayElement(fileArray, i);
+
+                jstring fileName = (jstring)env->GetObjectField(file, g_fileName);
+                jstring fileUrl = (jstring)env->GetObjectField(file, g_fileUrl);
+                jlong fileSize = env->GetLongField(file, g_fileSize);
+
+                files[i].name = s3eEdkGetStringUTF8Chars(fileName);
+                files[i].url = s3eEdkGetStringUTF8Chars(fileUrl);
+                files[i].size = fileSize;
+
+                env->DeleteLocalRef(fileName);
+                env->DeleteLocalRef(fileUrl);
+                env->DeleteLocalRef(file);
+            }
+            response.files = files;
+            env->DeleteLocalRef(fileArray);
+        }
+        else
+        {
+            response.fileCount = 0;
+            response.files = NULL;
+        }
+
         s3eEdkCallbacksEnqueue(S3E_EXT_ANDROIDXAPK_HASH, s3eAndroidXAPKCallback_ResponseReceived, &response, sizeof(response), NULL, true, responseCleanup);
     }
 }
 
 void responseCleanup(uint32 extID, int32 notification, void* systemData, void* instance, int32 returnCode, void* completeData)
 {
+    s3eAndroidXAPKResponse* response = reinterpret_cast<s3eAndroidXAPKResponse*>(systemData);
+
+    for(int i = 0; i < response->fileCount; ++i)
+    {
+        s3eEdkReleaseStringUTF8Chars(response->files[i].name);
+        s3eEdkReleaseStringUTF8Chars(response->files[i].url);
+    }
+
+    s3eEdkFreeOS((void*)response->files);
 }
