@@ -19,10 +19,10 @@ typedef enum s3eAndroidXAPKCallback
      * Called after s3eAndroidXAPKGetFiles is called to return the response.
      * systemData is a pointer to an s3eAndroidXAPKResponse instance
      */
-	s3eAndroidXAPKCallback_ResponseReceived,
+    s3eAndroidXAPKCallback_ResponseReceived,
 
-	// Marker for the last callback
-	s3eAndroidXAPKCallback_MAX
+    // Marker for the last callback
+    s3eAndroidXAPKCallback_MAX
 } s3eAndroidXAPKCallback;
 
 static jobject g_Obj;
@@ -175,12 +175,14 @@ void responseReceived(JNIEnv* env, jobject obj, jobject responseObj)
                 jstring fileUrl = (jstring)env->GetObjectField(file, g_fileUrl);
                 jlong fileSize = env->GetLongField(file, g_fileSize);
 
-                files[i].name = s3eEdkGetStringUTF8Chars(fileName);
-                files[i].url = s3eEdkGetStringUTF8Chars(fileUrl);
+                files[i].name = fileName ? s3eEdkGetStringUTF8Chars(fileName) : NULL;
+                files[i].url = fileUrl ? s3eEdkGetStringUTF8Chars(fileUrl) : NULL;
                 files[i].size = fileSize;
 
-                env->DeleteLocalRef(fileName);
-                env->DeleteLocalRef(fileUrl);
+                if (fileName)
+                    env->DeleteLocalRef(fileName);
+                if (fileUrl)
+                    env->DeleteLocalRef(fileUrl);
                 env->DeleteLocalRef(file);
             }
             response.files = files;
@@ -202,8 +204,10 @@ void responseCleanup(uint32 extID, int32 notification, void* systemData, void* i
 
     for(int i = 0; i < response->fileCount; ++i)
     {
-        s3eEdkReleaseStringUTF8Chars(response->files[i].name);
-        s3eEdkReleaseStringUTF8Chars(response->files[i].url);
+        if (response->files[i].name)
+            s3eEdkReleaseStringUTF8Chars(response->files[i].name);
+        if (response->files[i].url)
+            s3eEdkReleaseStringUTF8Chars(response->files[i].url);
     }
 
     s3eEdkFreeOS((void*)response->files);
