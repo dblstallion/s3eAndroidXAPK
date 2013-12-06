@@ -18,8 +18,8 @@ import com.google.android.vending.licensing.LicenseChecker;
 import com.google.android.vending.licensing.LicenseCheckerCallback;
 import com.google.android.vending.licensing.Policy;
 
+import android.os.Environment;
 import android.content.Context;
-
 import android.provider.Settings.Secure;
 
 class s3eAndroidXAPK
@@ -69,7 +69,7 @@ class s3eAndroidXAPK
                 for (int i = 0; i < count; i++)
                 {
                     File file = new File();
-                    file.name = aep.getExpansionFileName(i);
+                    file.name = "raw://" + Environment.getExternalStorageDirectory() + "/Android/obb/" + context.getPackageName() + "/" + aep.getExpansionFileName(i);
                     file.url = aep.getExpansionURL(i);
                     file.size = aep.getExpansionFileSize(i);
                     
