@@ -63,13 +63,18 @@ class s3eAndroidXAPK
             public void allow(int reason)
             {
                 Response response = new Response();
+
+                String directory = Environment.getExternalStorageDirectory() + "/Android/obb/" + context.getPackageName();
+                java.io.File directoryFile = new java.io.File(directory);
+                // Ensure the output directory exists
+                directoryFile.mkdirs();
                 
                 int count = aep.getExpansionURLCount();
                 response.files = new File[count];
                 for (int i = 0; i < count; i++)
                 {
                     File file = new File();
-                    file.name = "raw://" + Environment.getExternalStorageDirectory() + "/Android/obb/" + context.getPackageName() + "/" + aep.getExpansionFileName(i);
+                    file.name = "raw://" + directory + "/" + aep.getExpansionFileName(i);
                     file.url = aep.getExpansionURL(i);
                     file.size = aep.getExpansionFileSize(i);
                     
