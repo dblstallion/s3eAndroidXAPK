@@ -11,4 +11,12 @@
 #define S3E_EXT_ANDROIDXAPK_NAME "s3eAndroidXAPK"
 #define S3E_EXT_ANDROIDXAPK_HASH 0x218da085
 
+#ifdef S3E_EXT_REGISTER
+#ifndef S3E_EXT_REGISTER_KEY
+#define S3E_EXT_REGISTER_KEY(name, num, key) S3E_EXT_REGISTER(name, num)
+#endif
+S3E_EXT_REGISTER("s3eAndroidXAPK", 1)
+#else
+
+#endif /* S3E_EXT_REGISTER */
 #endif /* !S3EANDROIDXAPK_AUTODEFS_H */

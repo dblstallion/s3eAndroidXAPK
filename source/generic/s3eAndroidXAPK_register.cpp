@@ -32,7 +32,7 @@ void s3eAndroidXAPKRegisterExt()
     /*
      * Register the extension
      */
-    s3eEdkRegister("s3eAndroidXAPK", funcPtrs, sizeof(funcPtrs), flags, s3eAndroidXAPKInit, s3eAndroidXAPKTerminate, 0);
+s3eEdkRegister("s3eAndroidXAPK", funcPtrs, sizeof(funcPtrs), flags, s3eAndroidXAPKInit, s3eAndroidXAPKTerminate, 0);
 }
 
 #if !defined S3E_BUILD_S3ELOADER
